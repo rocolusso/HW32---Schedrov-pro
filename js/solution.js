@@ -14,25 +14,26 @@
 5 Удалить у тега ul атрибут ‘data-dog-tail‘
  */
 
-const getUl = document.getElementById('ulId');
-const arrLi = Array.from(getUl.children);
-let arrUlInner = [];
-let arrInnerNames = [];
-const myName = 'Пит';
-const myNameAttr = 'data-my-name';
+void function () {
+    const getUl = document.getElementById('ulId');
+    const arrLi = Array.from(getUl.children);
+    let arrUlInner = [];
+    let arrInnerNames = [];
+    const myName = 'Пит';
+    const myNameAttr = 'data-my-name';
 
-
-for (let li of arrLi) {
+    for (let li of arrLi) {
         arrUlInner.push(li.innerHTML);
-}
+    }
 
-for (let li of arrLi) {
-    arrInnerNames.push(li.nodeName);
-}
+    for (let li of arrLi) {
+        arrInnerNames.push(li.nodeName);
+    }
 
-console.log(`*******TASK 1: Array with list of li inner ******* \n\n`+ arrUlInner);
-console.log(`*******TASK 2: Array with list of li nodeName's ******* \n\n`+ arrInnerNames);
+    console.log(`*******TASK 1: Array with list of li inner ******* \n\n`+ arrUlInner);
+    console.log(`*******TASK 2: Array with list of li nodeName's ******* \n\n`+ arrInnerNames);
 
-getUl.lastElementChild.innerHTML =  `Привет, меня зовут ${myName} `;
-getUl.firstElementChild.setAttribute(myNameAttr, myName );
-getUl.removeAttribute('data-dog-tail');
+    getUl.lastElementChild.innerHTML =  `Привет, меня зовут ${myName} `;
+    getUl.firstElementChild.setAttribute(myNameAttr, myName );
+    getUl.removeAttribute('data-dog-tail');
+}();
