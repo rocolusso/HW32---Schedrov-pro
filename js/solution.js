@@ -14,6 +14,7 @@
 5 Удалить у тега ul атрибут ‘data-dog-tail‘
  */
 
+
 void function () {
     const getUl = document.getElementById('ulId');
     const arrLi = Array.from(getUl.children);
