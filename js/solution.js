@@ -15,25 +15,21 @@
  */
 
 void function () {
-    const getUl = document.getElementById('ulId');
-    const arrLi = Array.from(getUl.children);
-    let arrUlInner = [];
-    let arrInnerNames = [];
-    const myName = 'Пит';
-    const myNameAttr = 'data-my-name';
+    const ul = document.getElementById('ulId');
+    const ulInnerElements = ul.children;
+    console.log(ulInnerElements);        // task 0
 
-    for (let li of arrLi) {
-        arrUlInner.push(li.innerHTML);
+    const ulAttributesNames = ul.getAttributeNames();
+    const ulAttrValues = [];
+
+    for (let i of ulAttributesNames){
+        ulAttrValues.push(ul.attributes.item(ulAttributesNames.indexOf(i)).nodeValue);
     }
+    console.log(`*******TASK 1: ul tag attributes values ******* `+ ulAttrValues)
+    console.log(`*******TASK 2: ul tag attributes names ******* `+ ulAttributesNames)
 
-    for (let li of arrLi) {
-        arrInnerNames.push(li.nodeName);
-    }
-
-    console.log(`*******TASK 1: Array with list of li inner ******* \n\n`+ arrUlInner);
-    console.log(`*******TASK 2: Array with list of li nodeName's ******* \n\n`+ arrInnerNames);
-
-    getUl.lastElementChild.innerHTML =  `Привет, меня зовут ${myName} `;
-    getUl.firstElementChild.setAttribute(myNameAttr, myName );
-    getUl.removeAttribute('data-dog-tail');
+    const userName = 'Пит';
+    ul.lastElementChild.innerHTML = `Привет, меня зовут ${userName}`; //task 3
+    ul.firstElementChild.setAttribute('data-my-name',`${userName}`); //task 4
+    ul.removeAttribute('data-dog-tail'); //task 5
 }();
