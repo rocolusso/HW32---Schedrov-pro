@@ -1,5 +1,4 @@
 'use strict';
-
 /*
 У нас есть дерево, структурированное как вложенные списки ul/li.
 
@@ -13,7 +12,6 @@
 4 Добавить первому элементу li атрибут ‘data-my-name‘ со значением в котором будет лежать Ваше имя
 5 Удалить у тега ul атрибут ‘data-dog-tail‘
  */
-
 void function () {
     const ul = document.getElementById('ulId');
     const ulInnerElements = ul.children;
